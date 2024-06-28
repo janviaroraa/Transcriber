@@ -12,15 +12,25 @@ import Speech
 class RecordViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var textView: UITextView!
     
     private var audioRecorder: AVAudioRecorder?
     private var recordedFileURL: URL?
+    private var textFileURL: URL?
+    private var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordedFileURL = Utilities.getAudioFileURL()
+        let utilities = Utilities()
+        recordedFileURL = utilities.getAudioFileURL()
+        textFileURL = utilities.getTextFileURL()
         print(recordedFileURL?.absoluteString ?? "No recorded file found")
         recordAudio()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer?.stop()
     }
 
     // MARK: Audio Recording
@@ -58,13 +68,31 @@ class RecordViewController: UIViewController {
 
     // MARK: Audio Trnascription
 
-    fileprivate func recordingEnded(success: Bool) {
-        if success {
-            do {
-                
-            } catch let error {
-                print(error.localizedDescription)
+    private func transcribeAudio() {
+        guard let recordedFileURL, let textFileURL else { return }
+        let recognizer = SFSpeechRecognizer()
+        let request = SFSpeechURLRecognitionRequest(url: recordedFileURL)
+        recognizer?.recognitionTask(with: request) { [weak self] (result, error) in
+            guard let result else {
+                print(error?.localizedDescription)
+                return
             }
+            if result.isFinal {
+                let text = result.bestTranscription.formattedString
+                self?.textView.text = text
+                try? text.write(to: textFileURL, atomically: true, encoding: .utf8)
+            }
+        }
+    }
+
+    // MARK: Play & transcribe audio
+    private func recordingEnded(success: Bool) {
+        if success {
+            audioPlayer?.stop()
+            guard let recordedFileURL else { return }
+            audioPlayer = try? AVAudioPlayer(contentsOf: recordedFileURL)
+            audioPlayer?.play()
+            transcribeAudio()
         }
     }
 }

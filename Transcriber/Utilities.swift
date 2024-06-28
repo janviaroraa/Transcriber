@@ -9,7 +9,9 @@ import Foundation
 
 class Utilities {
 
-    static func getDocumentDirectory() -> URL {
+    var dateAndTimeString: String?
+
+    func getDocumentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
@@ -21,12 +23,21 @@ class Utilities {
     /// Application Container ID "92FE5C13-7151-4CA3-8541-3E45D322F185"
     ///
     ///  Please note whenever you are stoing items to iCloud, only ''2024-06-27-19-25-00.m4a" should be stored
-    static func getAudioFileURL() -> URL? {
+    func getAudioFileURL() -> URL? {
         let audioURL = getDocumentDirectory().appendingPathComponent(getDateAndTime() + ".m4a")
         return audioURL
     }
 
-    static func getDateAndTime() -> String {
+    func getTextFileURL() -> URL? {
+        let textURL = getDocumentDirectory().appendingPathComponent(getDateAndTime() + ".txt")
+        return textURL
+    }
+
+    func getDateAndTime() -> String {
+        if let dateAndTimeString {
+            return dateAndTimeString
+        }
+
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
