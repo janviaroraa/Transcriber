@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2827" y="-1335"/>
+            <point key="canvasLocation" x="-2610" y="-1335"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VEw-LD-hzB">
@@ -108,12 +108,64 @@
                     <navigationItem key="navigationItem" title="Transcriptions" id="srZ-DM-hs3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w22-y0-pcj">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="dKn-fn-QHU" kind="show" id="6Sy-eT-Laz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpz-Qd-b76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="-1820"/>
+            <point key="canvasLocation" x="553" y="-1675"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="VXm-Yk-hrg">
+            <objects>
+                <viewController id="dKn-fn-QHU" customClass="RecordViewController" customModule="Transcriber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Za-yF-3Hy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waveform.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oZN-vn-7nV">
+                                <rect key="frame" x="131.66666666666666" y="372" width="129.99999999999997" height="108.66666666666669"/>
+                                <color key="tintColor" red="0.70616046349999995" green="0.86078912019999998" blue="0.83136730270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Be8-g4-yEx"/>
+                                    <constraint firstAttribute="height" constant="110" id="ifN-zh-rPy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn7-dS-chc">
+                                <rect key="frame" x="125" y="509" width="142" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop Recording" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.70616046349999995" green="0.86078912019999998" blue="0.83136730270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="grantPermissions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="soV-Gu-6ir"/>
+                                    <action selector="stopRecording:" destination="dKn-fn-QHU" eventType="touchUpInside" id="v9M-Mo-Erp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H9j-Ul-Q6p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oZN-vn-7nV" firstAttribute="centerY" secondItem="4Za-yF-3Hy" secondAttribute="centerY" id="06x-4n-lCZ"/>
+                            <constraint firstItem="oZN-vn-7nV" firstAttribute="leading" secondItem="Sn7-dS-chc" secondAttribute="trailing" constant="-135.33333333333334" id="2Ky-kf-UGL"/>
+                            <constraint firstItem="Sn7-dS-chc" firstAttribute="top" secondItem="oZN-vn-7nV" secondAttribute="bottom" constant="28" id="QrM-z8-CGx"/>
+                            <constraint firstItem="oZN-vn-7nV" firstAttribute="centerX" secondItem="4Za-yF-3Hy" secondAttribute="centerX" id="UaG-3z-Wf6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dw0-wA-NKB"/>
+                    <connections>
+                        <outlet property="image" destination="oZN-vn-7nV" id="h2h-b4-E4i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kya-1A-iwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327.4809160305342" y="-1675.3521126760563"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="h9r-4i-ETd">
@@ -186,6 +238,7 @@
     <resources>
         <image name="clock.fill" catalog="system" width="128" height="123"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="waveform.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

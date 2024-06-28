@@ -15,6 +15,8 @@
 		122F08632C2D8C90006B1D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122F08622C2D8C90006B1D31 /* Assets.xcassets */; };
 		122F08662C2D8C90006B1D31 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 122F08652C2D8C90006B1D31 /* Base */; };
 		122F086E2C2D9404006B1D31 /* TranscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F086D2C2D9404006B1D31 /* TranscriptionsTableViewController.swift */; };
+		122F08702C2DA247006B1D31 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F086F2C2DA247006B1D31 /* Utilities.swift */; };
+		122F08722C2DA50F006B1D31 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F08712C2DA50F006B1D31 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		122F08652C2D8C90006B1D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		122F08672C2D8C90006B1D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122F086D2C2D9404006B1D31 /* TranscriptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionsTableViewController.swift; sourceTree = "<group>"; };
+		122F086F2C2DA247006B1D31 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		122F08712C2DA50F006B1D31 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +67,9 @@
 				122F08562C2D8C8E006B1D31 /* AppDelegate.swift */,
 				122F08582C2D8C8E006B1D31 /* SceneDelegate.swift */,
 				122F085A2C2D8C8E006B1D31 /* ViewController.swift */,
+				122F086F2C2DA247006B1D31 /* Utilities.swift */,
 				122F085C2C2D8C8E006B1D31 /* Main.storyboard */,
+				122F08712C2DA50F006B1D31 /* RecordViewController.swift */,
 				122F086D2C2D9404006B1D31 /* TranscriptionsTableViewController.swift */,
 				122F08622C2D8C90006B1D31 /* Assets.xcassets */,
 				122F08642C2D8C90006B1D31 /* LaunchScreen.storyboard */,
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122F08702C2DA247006B1D31 /* Utilities.swift in Sources */,
 				122F085B2C2D8C8E006B1D31 /* ViewController.swift in Sources */,
 				122F086E2C2D9404006B1D31 /* TranscriptionsTableViewController.swift in Sources */,
+				122F08722C2DA50F006B1D31 /* RecordViewController.swift in Sources */,
 				122F08572C2D8C8E006B1D31 /* AppDelegate.swift in Sources */,
 				122F08592C2D8C8E006B1D31 /* SceneDelegate.swift in Sources */,
 				122F08612C2D8C8E006B1D31 /* Transcriber.xcdatamodeld in Sources */,
