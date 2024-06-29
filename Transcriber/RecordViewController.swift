@@ -18,6 +18,7 @@ class RecordViewController: UIViewController {
     private var recordedFileURL: URL?
     private var textFileURL: URL?
     private var audioPlayer: AVAudioPlayer?
+    private var transcribed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,9 @@ class RecordViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer?.stop()
+        if transcribed {
+            CoreDataHelper.shared.storeTranscription(audioFileUrlString: recordedFileURL?.absoluteString ?? "", textFileUrlString: textFileURL?.absoluteString ?? "")
+        }
     }
 
     // MARK: Audio Recording
@@ -81,6 +85,7 @@ class RecordViewController: UIViewController {
                 let text = result.bestTranscription.formattedString
                 self?.textView.text = text
                 try? text.write(to: textFileURL, atomically: true, encoding: .utf8)
+                self?.transcribed = true
             }
         }
     }

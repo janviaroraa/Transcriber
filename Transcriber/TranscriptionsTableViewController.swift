@@ -16,6 +16,7 @@ class TranscriptionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkPermissions()
+        CoreDataHelper()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -18,6 +18,7 @@
 		122F08702C2DA247006B1D31 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F086F2C2DA247006B1D31 /* Utilities.swift */; };
 		122F08722C2DA50F006B1D31 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F08712C2DA50F006B1D31 /* RecordViewController.swift */; };
 		122F08802C2E9817006B1D31 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122F087F2C2E9817006B1D31 /* CoreData.framework */; };
+		122F08842C2E9926006B1D31 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F08832C2E9926006B1D31 /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		122F086F2C2DA247006B1D31 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		122F08712C2DA50F006B1D31 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		122F087F2C2E9817006B1D31 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		122F08832C2E9926006B1D31 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		122F08812C2E9848006B1D31 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				122F08832C2E9926006B1D31 /* CoreDataHelper.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				122F08702C2DA247006B1D31 /* Utilities.swift in Sources */,
 				122F085B2C2D8C8E006B1D31 /* ViewController.swift in Sources */,
+				122F08842C2E9926006B1D31 /* CoreDataHelper.swift in Sources */,
 				122F086E2C2D9404006B1D31 /* TranscriptionsTableViewController.swift in Sources */,
 				122F08722C2DA50F006B1D31 /* RecordViewController.swift in Sources */,
 				122F08572C2D8C8E006B1D31 /* AppDelegate.swift in Sources */,
