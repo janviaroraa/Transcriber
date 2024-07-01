@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="foY-ca-zOy">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--QuickShare-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuickShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="San-or-3fn">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quickShareTableViewCell" rowHeight="160" id="lnM-rq-lol" customClass="QuickShareTableViewCell" customModule="QuickShare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lnM-rq-lol" id="Ypv-fP-nwO">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QeB-bg-O66">
+                                                    <rect key="frame" x="40" y="11" width="313" height="138"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QeB-bg-O66" secondAttribute="trailing" constant="20" id="0ZD-hH-MDe"/>
+                                                <constraint firstItem="QeB-bg-O66" firstAttribute="top" secondItem="Ypv-fP-nwO" secondAttribute="topMargin" id="2hm-rK-1DO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QeB-bg-O66" secondAttribute="bottom" id="cfk-V1-2v8"/>
+                                                <constraint firstItem="QeB-bg-O66" firstAttribute="leading" secondItem="Ypv-fP-nwO" secondAttribute="leadingMargin" constant="20" id="xK8-x7-q2O"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quickShareImage" destination="QeB-bg-O66" id="HGN-t0-A3t"/>
+                                            <segue destination="ntb-bm-BZL" kind="show" identifier="showFullImageSegue" id="0HW-a1-DHM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="San-or-3fn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Bf-r1-j09"/>
+                            <constraint firstItem="San-or-3fn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="802-AL-FZf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="San-or-3fn" secondAttribute="bottom" id="INd-mO-Sqv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="San-or-3fn" secondAttribute="trailing" id="Js7-zy-GJn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="QuickShare" id="TDd-Iy-VSQ"/>
+                    <connections>
+                        <outlet property="quickShareTableView" destination="San-or-3fn" id="SpI-q7-gkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815" y="4"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="vOP-zd-yek">
+            <objects>
+                <viewController id="ntb-bm-BZL" customClass="DetailsViewController" customModule="QuickShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qsy-kw-xIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-Eo-nCX">
+                                <rect key="frame" x="0.0" y="103" width="393" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sZI-Eo-nCX" secondAttribute="height" multiplier="16:9" id="1qA-E6-b4x"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y5P-gh-arW">
+                                <rect key="frame" x="20" y="354" width="353" height="203.66666666666663"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfQ-g3-i6t">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Facebook" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="ntb-bm-BZL" eventType="touchUpInside" id="Li4-RM-bcE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSY-6v-LAP">
+                                        <rect key="frame" x="0.0" y="42.333333333333314" width="353" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Instagram" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.86078912019729614" green="0.35781688446677812" blue="0.4631791352845796" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="ntb-bm-BZL" eventType="touchUpInside" id="K3j-OM-jP4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGf-4W-kRm">
+                                        <rect key="frame" x="0.0" y="84.666666666666686" width="353" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Whatsapp" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="ntb-bm-BZL" eventType="touchUpInside" id="uuV-Hl-PW0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-3f-6fw">
+                                        <rect key="frame" x="0.0" y="126.99999999999999" width="353" height="34.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pinterest" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.86078912019729614" green="0.33291673688510098" blue="0.28783065216734149" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="ntb-bm-BZL" eventType="touchUpInside" id="hg2-9h-ldq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRd-bP-mdn">
+                                        <rect key="frame" x="0.0" y="169.33333333333337" width="353" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="X" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="shareButtonClicked:" destination="ntb-bm-BZL" eventType="touchUpInside" id="sc5-p1-w5f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wxK-sE-QM6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wxK-sE-QM6" firstAttribute="trailing" secondItem="sZI-Eo-nCX" secondAttribute="trailing" id="0Je-bw-XJw"/>
+                            <constraint firstItem="y5P-gh-arW" firstAttribute="leading" secondItem="wxK-sE-QM6" secondAttribute="leading" constant="20" id="DUr-2g-ToL"/>
+                            <constraint firstItem="y5P-gh-arW" firstAttribute="top" secondItem="sZI-Eo-nCX" secondAttribute="bottom" constant="30" id="Gmp-bh-lNz"/>
+                            <constraint firstItem="wxK-sE-QM6" firstAttribute="trailing" secondItem="y5P-gh-arW" secondAttribute="trailing" constant="20" id="g4w-4X-A9W"/>
+                            <constraint firstItem="sZI-Eo-nCX" firstAttribute="leading" secondItem="wxK-sE-QM6" secondAttribute="leading" id="kID-Rd-yiB"/>
+                            <constraint firstItem="sZI-Eo-nCX" firstAttribute="top" secondItem="wxK-sE-QM6" secondAttribute="top" id="kPx-1V-ZEo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8R0-JN-NLh" userLabel="Back"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="sZI-Eo-nCX" id="j6m-uW-eqJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lC3-C6-gvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623.6641221374045" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PTr-eq-TO8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foY-ca-zOy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cp4-qe-VRy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gS3-1V-5F0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0P-cm-mk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17.557251908396946" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
